@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for blog in blogs %} <!-- lists all blogs by a selected user -->
+        <h2><a href="/all_blogs?id={{blog.id}}">{{blog.title}}</a></h2> 
+        <p></p>
+        <p>{{blog.blog}}</p>
+        <p></p>
+        Written by <a href="/all_blogs?user={{blog.owner_id}}">{{blog.owner.username}}</a>
+        <p></p>
+        <p></p>
+    {% endfor %}
+{% endblock %}
+

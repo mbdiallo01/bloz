@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <h2> Build A Blog </h2>
+        <style>
+            .error {
+                     color: red;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <nav>
+            <a href="/all_blogs"> view all blogs</a> |
+            <a href="/newpost">Add a Blog page</a> |
+            <a href="/login"> Login</a> |
+            <a href="/signup">Sign UP</a> |
+            <a href="/logout">Logout</a> 
+            <p></p> 
+        </nav>                   
+<!-- shows the flashed error messages -->
+        {% with messages = get_flashed_messages() %}
+        <ul class=error>
+            {% for message in messages %}
+            <p></p>
+            <p></p>
+            <li>{{message}}</li>
+            {% endfor %}
+        </ul>
+        {% endwith %}
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
+  
